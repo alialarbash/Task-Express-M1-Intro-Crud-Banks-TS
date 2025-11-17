@@ -58,8 +58,15 @@ export const deleteAccount = (req: Request, res: Response) => {
   if (index === -1) {
     return res.status(404).json({ message: "Account not found" });
   } else {
-    accounts.splice(index, 1);
-    res.status(200).json(accounts);
+    // accounts.splice(index, 1);
+    // res.status(200).json(accounts);
+    const updatedAccounts = accounts.filter((account) => {
+      if (account.id !== Number(id)) {
+        return true;
+      }
+      return false;
+    });
+    res.status(200).json(updatedAccounts);
   }
 };
 
