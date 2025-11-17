@@ -1,6 +1,6 @@
 import request from "supertest";
 import app from "../src/app";
-import { accounts } from "../data/accounts";
+import { accounts } from "../src/data/accounts";
 
 describe("Bank Accounts API Tests", () => {
   // Store original accounts to restore after each test
