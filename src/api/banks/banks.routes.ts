@@ -1,15 +1,18 @@
-import express, { Request, Response } from "express";
-import { accounts } from "../../data/accounts";
+import { Router } from "express";
 import {
   getAccounts,
   getAccountByUsername,
   createAccount,
   deleteAccount,
   updateAccount,
+  getVipAccounts,
 } from "./banks.controller";
-const bankRoutes = express();
+
+const bankRoutes = Router();
 
 bankRoutes.get("/accounts", getAccounts);
+
+bankRoutes.get("/accounts/vip", getVipAccounts);
 
 bankRoutes.get("/accounts/:username", getAccountByUsername);
 
